@@ -1,0 +1,68 @@
+/* ヘッダー */
+header {
+    background: linear-gradient(to right, #4e73df, #1cc88a);
+}
+
+body {
+    background-color: #f8f9fa;
+}
+
+h1 {
+    font-weight: bold;
+
+}
+
+table,
+th,
+td {
+    background-color: #f8f9fa !important;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+footer {
+    padding: 20px 0;
+    text-align: center;
+    background-color: #343a40;
+    color: white;
+}
+
+/* セクション間のアニメーション */
+#game-rules .row div,
+#down-rules .row div {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-in-out;
+}
+
+/* カードのカスタマイズ */
+.role-card {
+    min-width: 200px;
+    flex: 0 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s;
+}
+
+.role-card:hover {
+    transform: scale(1.05);
+}
+
+/* スクロールコンテナのスタイル */
+.scroll-container {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+}
+
+/* キャッチフレーズ */
+.tagline {
+    font-style: italic;
+    font-size: 1.25rem;
+}
+
+/* アニメーション */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
