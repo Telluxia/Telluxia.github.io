@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <title>FlagRush | Telluxia</title>
+    <meta name="description" content="" />
+
+    <meta property="og:site_name" content="Telluxia" />
+    <meta property="og:url" content="https://telluxia.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="FlagRush | Telluxia" />
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="bg-primary text-white text-center py-5">
+        <h1 class="display-4" style="font-weight: bold;">FragRush</h1>
+        <p class="lead">仲間と共にフラッグを奪い、勝利をつかめ！</p>
+    </header>
+
+    <!-- Overview -->
+    <section id="overview" class="container py-5">
+        <h2 class="text-center">Overview</h2>
+        <p class="text-center">フラッグラッシュは、チーム対抗のフラッグ奪取ゲームです。仲間と協力し、相手のフラッグを奪って自分たちの得点ゾーンに運びましょう！</p>
+    </section>
+
+    <!-- Game Rules -->
+    <section id="game-rules">
+        <div class="container col-md-8">
+            <h2 class="text-center">Rules</h2>
+            <!-- Base -->
+            <h3 class="text-center">Base</h3>
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">チーム編成</h5>
+                            <p class="card-text">各チーム6人で編成。<br>役職は自由に選択可能（一部制限アリ）。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">コート分け</h5>
+                            <p class="card-text">体育館の中央でコートを分割し、各チームの端に得点エリアを設定。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">フラッグ配置</h5>
+                            <p class="card-text">各チームのエリアに3本のフラッグを自由に配置。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">ゲーム目的</h5>
+                            <p class="card-text">相手チームのフラッグを奪い、自チームの得点ゾーンに運びます。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">ラウンド時間</h5>
+                            <p class="card-text">前半3分、ハーフタイム1分、後半3分。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">勝敗条件</h5>
+                            <p class="card-text">得点エリアのフラッグ数、または生存者数で勝敗が決定されます。<br>全フラッグ奪取か、敵チーム全滅で即勝利。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Down -->
+            <h3 class="text-center">Down</h3>
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">ダウン方法</h5>
+                            <p class="card-text">暴走族や魔術師の攻撃でダウンします。<br>魔術師のアイテム攻撃がキャッチされると無効。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">ダウン状態</h5>
+                            <p class="card-text">ダウンしたプレイヤーはその場に体育座りで待機。<br>僧侶の助けが必要です。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kamae -->
+            <h3 class="text-center">Kamae</h3>
+            <p>ハーフタイムに、各チームに対してランダムでカマエが決定されます。後半戦は決定されたカマエをして戦います。</p>
+            <h4 class="text-center">カマエ一覧</h4>
+
+            <!-- Roles -->
+            <h3 class="text-center">Roles</h3>
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">運び屋</h5>
+                            <p class="card-text">相手チームのフラッグを運び、自チームの得点ゾーンに運びます。</p>
+                            <p class="card-text">１～２人</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">回収屋</h5>
+                            <p class="card-text">運ばれた自チームのフラッグ回収します。</p>
+                            <p class="card-text">１～２人</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">暴走族</h5>
+                            <p class="card-text">相手チームのプレイヤーにタッチしてダウンさせます。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">暴走族</h5>
+                            <p class="card-text">ボールなどのアイテムで相手を攻撃します。<br>アイテムをキャッチされると無効になります。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">僧侶</h5>
+                            <p class="card-text">ダウンした仲間をタッチで復活させます。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Q&A -->
+    <section id="q&a" class="container">
+        <h2 class="text-center">Q&A</h2>
+        <div class="accordion" id="accordionFlush">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        Q01: ダウンした場合、何回でも復活できますか？
+                    </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
+                    <div class="accordion-body">はい、僧侶が助けに来れば何度でも復活可能です。</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        Q02: 僧侶が全員ダウンした場合、復活させる方法はありますか？
+                    </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
+                    <div class="accordion-body">いいえ、生存している僧侶が一人もいない場合、復活方法はありません。</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        Q03: フラッグを奪ったらどこに運べばよいですか？
+                    </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
+                    <div class="accordion-body">自チームの得点ゾーンに運びます。得点ゾーンにフラッグが入ってもゲームは継続されます。</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseThree">
+                        Q04: フラッグを持てる本数に上限はありますか？
+                    </button>
+                </h2>
+                <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
+                    <div class="accordion-body">一度に持てるフラッグは1本です。</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseThree">
+                        Q05: アイテムを持てる数に上限はありますか？
+                    </button>
+                </h2>
+                <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
+                    <div class="accordion-body">一度に持てるアイテムは一つです。</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseThree">
+                        Q06: 自チームの得点ゾーンはどこにありますか？
+                    </button>
+                </h2>
+                <div id="flush-collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
+                    <div class="accordion-body">自チームコートの（相手チームのコートと隣り合っていない）短辺の端にあります。</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseThree">
+                        Q07: ダウンした場所から移動できますか？
+                    </button>
+                </h2>
+                <div id="flush-collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
+                    <div class="accordion-body">いいえ、ダウンしたプレイヤーはその場に留まり、僧侶が来るまで動けません。</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseEight" aria-expanded="false" aria-controls="flush-collapseThree">
+                        Q08: ハーフタイムに役職を変更できますか？
+                    </button>
+                </h2>
+                <div id="flush-collapseEight" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
+                    <div class="accordion-body">はい、可能です。なお、前半・後半の試合中で役職の変更はできません。
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseNine" aria-expanded="false" aria-controls="flush-collapseThree">
+                        Q09: フラッグを持った状態でダウンしたらどうしますか？
+                    </button>
+                </h2>
+                <div id="flush-collapseNine" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
+                    <div class="accordion-body">ダウンしたプレイヤーは、ダウンした場所にフラッグを置いてください。そのフラッグは、他のプレイヤーが拾うことができます。
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseTen" aria-expanded="false" aria-controls="flush-collapseThree">
+                        Q10: 魔術師のアイテムをキャッチした場合、そのアイテムはどうしますか？
+                    </button>
+                </h2>
+                <div id="flush-collapseTen" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
+                    <div class="accordion-body">キャッチしたプレイヤーが魔術師でない場合は、そのアイテムを足元に置いてください。魔術師の場合は、そのアイテムを利用して構いません。
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseEleven" aria-expanded="false"
+                        aria-controls="flush-collapseThree">
+                        Q11: ダウンしていないプレイヤーがダウンした敵や仲間のフラッグやアイテムを拾うことは可能ですか？
+                    </button>
+                </h2>
+                <div id="flush-collapseEleven" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
+                    <div class="accordion-body">はい、可能です。
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseTwelve" aria-expanded="false"
+                        aria-controls="flush-collapseThree">
+                        Q12: カマエはどのタイミングで決定され、適用されますか？
+                    </button>
+                </h2>
+                <div id="flush-collapseTwelve" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
+                    <div class="accordion-body">ハーフタイムに決定され、後半戦に適用されます。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div style="text-align: right; margin: 1em;">
+        <a class="icon-link icon-link-hover" href="rulebook.html" style="text-align: right;"
+            style="--bs-icon-link-transform: translate3d(0, -.125rem, 0);">
+            <i class="bi bi-box-arrow-up-right"></i>
+            詳細はこちら
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 体育６班 | All Rights Reserved</p>
+    </footer>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script src="js/javascript.js"></script>
+</body>
+
+</html>
